@@ -1,0 +1,8 @@
+logging:
+  level:
+    '[org.carthageking.mc.mcck.ex.sbw]': ${APP_LOG_LEVEL:TRACE}
+
+
+server:
+  port: ${APP_SERVER_PORT:9091}
+
