@@ -3,6 +3,7 @@ package org.carthageking.mc.mcck.ex.sbw.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.tiles3.TilesConfigurer;
@@ -30,5 +31,11 @@ public class WebMvcConfig implements WebMvcConfigurer {
 	public void configureViewResolvers(ViewResolverRegistry registry) {
 		TilesViewResolver tvr = new TilesViewResolver();
 		registry.viewResolver(tvr);
+	}
+
+	@Override
+	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+		// ensures to expose our static files (js, css, etc.) to the browser
+		registry.addResourceHandler("/static/**").addResourceLocations("/static/");
 	}
 }

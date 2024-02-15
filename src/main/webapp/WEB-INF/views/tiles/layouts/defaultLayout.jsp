@@ -5,10 +5,11 @@
 
 
 <head>
+	<link rel="stylesheet" href="<c:url value='/static/css/global.css'/>"/>
 </head>
 
 
-<body>
+<body class="min-body-dimensions">
 	<div>Hello world!</div>
 </body>
 
